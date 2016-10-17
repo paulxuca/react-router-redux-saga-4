@@ -1,0 +1,28 @@
+.navigationBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  background-color: white;
+}
+
+.navigationBarContainer {
+  flex: 1;
+  display: flex;
+  margin: 10px;
+  align-items: center;
+}
+
+.navigationBar__link{
+  color: #CCC;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.navigationBar__link__active {
+  composes: navigationBar__link;
+  color: black;
+}
