@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.css';
 
-class App extends React.Component {
+class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div className={styles.appContainer}>
@@ -10,5 +10,9 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  children: React.PropTypes.node,
+};
 
 export default App;

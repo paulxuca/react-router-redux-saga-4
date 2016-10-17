@@ -5,7 +5,7 @@ import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
-const devtools = window.devToolsExtension || (() => (noop) => noop);
+const devtools = window.devToolsExtension || (() => (noop) => noop); // eslint-disable-line
 
 export default function configureStore(initialState = {}, history) {
   const middlewares = [
@@ -28,7 +28,7 @@ export default function configureStore(initialState = {}, history) {
 
   if (module.hot) {
     module.hot.accept('./reducers', () => {
-      System.import('./reducers').then((reducerModule) => {
+      System.import('./reducers').then(() => {
         const nextReducers = createReducer();
         store.replaceReducer(nextReducers);
       });

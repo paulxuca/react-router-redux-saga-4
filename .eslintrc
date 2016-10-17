@@ -5,5 +5,11 @@
       "ecmaFeatures": {
         "jsx": true
       }
+    },
+    "extends": "airbnb",
+    "rules": {
+      "react/jsx-filename-extension": 0,
+      "import/newline-after-import": 0,
+      "import/no-extraneous-dependencies": 0
     }
 }
