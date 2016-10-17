@@ -13,13 +13,7 @@ import App from './containers/App';
 const Routing = () => (
   <BrowserRouter>
     <App>
-      <Match
-        exactly pattern="/"
-        render={() => {
-          const Component = require('react-router?name=home!./containers/Home');
-          return <Component />;
-        }}
-      />
+      <Match exactly pattern="/" component={require('react-router?name=home!./containers/Home')} />
       <Miss component={require('react-router?name=notFound!./containers/NotFound')} />
     </App>
   </BrowserRouter>
