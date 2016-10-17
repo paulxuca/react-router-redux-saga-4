@@ -29,8 +29,15 @@ module.exports = {
         presets: ['es2015', 'stage-0', 'react'],
       },
     }, {
-      test: /\.css$/i,
-      loader: ExtractTextPlugin.extract(['css', 'postcss']),
+      test: /\.css$/,
+      exclude: /node_modules/,
+      loader: ExtractTextPlugin.extract({
+        loader: 'css-loader?modules&-autoprefixer&importLoaders=1!postcss-loader',
+      }),
+    }, {
+      test: /\.css$/,
+      include: /node_modules/,
+      loader: ['style-loader', 'css-loader'],
     }],
   },
   plugins: [
@@ -61,7 +68,10 @@ module.exports = {
         warnings: false,
       },
     }),
-    new ExtractTextPlugin('assets/styles.css'),
+    new ExtractTextPlugin({
+      filename: 'assets/styles.css',
+      allChunks: true,
+    }),
     new HtmlWebpackPlugin({
       hash: false,
       template: './index.html',
