@@ -4,7 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { browserHistory } from 'react-router';
-import { Provider } from 'react-redux';
 import configureStore from './store';
 import Routing from './routes';
 
@@ -15,9 +14,7 @@ const store = configureStore({}, browserHistory);
 
 ReactDOM.render(
   <AppContainer>
-    <Provider store={store}>
-      <Routing />
-    </Provider>
+    <Routing store={store} />
   </AppContainer>,
   renderToDomElement
 );
@@ -28,7 +25,7 @@ if (module.hot) {
     const NextHotLoaded = require('./routes.js').default; // eslint-disable-line
     ReactDOM.render(
       <AppContainer>
-        <NextHotLoaded />
+        <NextHotLoaded store={store} />
       </AppContainer>
       ,
       renderToDomElement

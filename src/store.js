@@ -25,11 +25,11 @@ export default function configureStore(initialState = {}, history) {
   );
 
   store.runSaga = sagaMiddleware.run;
-
   if (module.hot) {
     module.hot.accept('./reducers', () => {
-      System.import('./reducers').then(() => {
-        const nextReducers = createReducer();
+      System.import('./reducers').then((reducerFunction) => {
+        const createReducers = reducerFunction.default;
+        const nextReducers = createReducers();
         store.replaceReducer(nextReducers);
       });
     });

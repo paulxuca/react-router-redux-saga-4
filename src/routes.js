@@ -7,16 +7,23 @@
 
 import React from 'react';
 import { BrowserRouter, Match, Miss } from 'react-router';
+import { Provider } from 'react-redux';
 import App from './containers/App';
 
 
-const Routing = () => (
+const Routing = ({ store }) => (
   <BrowserRouter>
-    <App>
-      <Match exactly pattern="/" component={require('react-router?name=home!./containers/Home')} />
-      <Miss component={require('react-router?name=notFound!./containers/NotFound')} />
-    </App>
+    <Provider store={store}>
+      <App>
+        <Match exactly pattern="/" component={require('react-router?name=home!./containers/Home')} />
+        <Miss component={require('react-router?name=notFound!./containers/NotFound')} />
+      </App>
+    </Provider>
   </BrowserRouter>
 );
+
+Routing.propTypes = {
+  store: React.PropTypes.object,
+};
 
 export default Routing;

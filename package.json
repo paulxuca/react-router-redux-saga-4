@@ -28,6 +28,7 @@
     "redux": "^3.6.0",
     "redux-immutable": "^3.0.8",
     "redux-saga": "^0.12.0",
+    "reselect": "^2.5.4",
     "sanitize.css": "^4.1.0",
     "whatwg-fetch": "^1.0.0"
   },
