@@ -14,6 +14,12 @@ const NavigationBar = () => (
       </Link>
       <Link
         activeClassName={styles.navigationBar__link__active}
+        className={styles.navigationBar__link} to="/example"
+      >
+        Example
+      </Link>
+      <Link
+        activeClassName={styles.navigationBar__link__active}
         className={styles.navigationBar__link} to="/notfound"
       >
         Not Found

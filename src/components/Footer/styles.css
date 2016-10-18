@@ -19,3 +19,7 @@
 .footerElementLight {
   font-weight: 400;
 }
+
+.footerElement__link {
+  text-decoration: none;
+}

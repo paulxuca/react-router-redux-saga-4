@@ -25,6 +25,7 @@ const Routing = ({ store }) => (
         <NavigationBar />
         <div style={appContainerStyling.appContainer}>
           <Match exactly pattern="/" component={require('react-router?name=home!./containers/Home')} />
+          <Match exactly pattern="/example" component={require('react-router?name=example!./containers/Example')} />
           <Miss component={require('react-router?name=notFound!./containers/NotFound')} />
         </div>
         <Footer />

@@ -5,6 +5,7 @@
   height: 50px;
   display: flex;
   background-color: white;
+  border-bottom: 1px solid #EEE;
 }
 
 .navigationBarContainer {

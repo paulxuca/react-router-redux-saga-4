@@ -6,11 +6,12 @@ import { AppContainer } from 'react-hot-loader';
 import { browserHistory } from 'react-router';
 import configureStore from './store';
 import Routing from './routes';
+import sagas from './sagas';
 
 
 const renderToDomElement = document.getElementById('root'); // eslint-disable-line
 const store = configureStore({}, browserHistory);
-
+store.runSaga(sagas);
 
 ReactDOM.render(
   <AppContainer>

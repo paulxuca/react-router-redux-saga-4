@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable';
 import { combineReducers } from 'redux-immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
-import homeReducer from './containers/Home/reducer';
+import exampleReducer from './containers/Example/reducer';
 
 
 const routeInitialState = fromJS({
@@ -22,6 +22,6 @@ function routeReducer(state = routeInitialState, action) {
 export default function createReducer() {
   return combineReducers({
     route: routeReducer,
-    home: homeReducer,
+    example: exampleReducer,
   });
 }
